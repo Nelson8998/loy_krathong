@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071225">
+<title>คืนที่เราลอยกระทงด้วยกัน ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Mali:wght@300;400;500&display=swap');
+:root{--cream:#ffe9bf;--gold:#f5c879;--ink:#08162a;--rose:#f7c8d9}*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:#061226;color:#fff;font-family:'Mali','Kanit',sans-serif}button{font:inherit;cursor:pointer}.scene{position:relative;height:100dvh;width:100%;overflow:hidden;isolation:isolate;background:linear-gradient(#061226 0%,#102548 44%,#1b3755 63%,#061525 100%)}
+/* layered night sky */
+.skyglow{position:absolute;inset:-15%;background:radial-gradient(ellipse at 76% 19%,#d4a96a29 0,transparent 25%),radial-gradient(ellipse at 50% 52%,#4b6f9a24 0,transparent 50%);animation:skybreath 12s ease-in-out infinite alternate}.moon{position:absolute;right:12%;top:9%;width:clamp(82px,13vw,148px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 27%,#fff9e5,#f5dfad 45%,#d9b879 100%);box-shadow:0 0 18px 4px #ffe9b444,0 0 70px 22px #f6d89125,0 0 180px 65px #f7dca511}.moon:after{content:'';position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle at 65% 28%,#b89d6b23 0 9%,transparent 10%),radial-gradient(circle at 28% 64%,#b89d6b21 0 13%,transparent 14%),radial-gradient(circle at 69% 71%,#b89d6b1b 0 6%,transparent 7%)}
+#starfield{position:absolute;inset:0}.star{position:absolute;border-radius:50%;background:#fff;box-shadow:0 0 5px 1px #cce6ff;animation:twinkle var(--tw) ease-in-out infinite alternate;opacity:var(--op)}@keyframes twinkle{to{opacity:.16;transform:scale(.55)}}.shooting-star{position:absolute;top:20%;left:85%;width:100px;height:1px;background:linear-gradient(90deg,#fff,transparent);transform:rotate(-34deg);opacity:0;animation:shoot 9s 3s infinite}@keyframes shoot{0%,72%{opacity:0;transform:translate(0) rotate(-34deg)}74%{opacity:.8}80%{opacity:0;transform:translate(-230px,130px) rotate(-34deg)}}
+.cloud{position:absolute;width:45vw;height:17vh;min-width:300px;background:#637d9820;filter:blur(25px);border-radius:50%;top:42%;animation:cloud 42s linear infinite}.cloud.c2{top:25%;width:35vw;animation-duration:62s;animation-direction:reverse;opacity:.5}@keyframes cloud{from{transform:translateX(-60vw)}to{transform:translateX(120vw)}}
+.horizon{position:absolute;bottom:34%;width:100%;height:24%;pointer-events:none}.mountain{position:absolute;bottom:0;width:65%;height:100%;background:linear-gradient(160deg,#152b43,#071727);opacity:.95;clip-path:polygon(0 85%,20% 65%,35% 78%,54% 25%,70% 66%,86% 42%,100% 90%,100% 100%,0 100%)}.mountain.right{right:-12%;transform:scaleX(-1);height:88%;opacity:.72}.shore{position:absolute;bottom:31%;height:6%;width:100%;background:linear-gradient(180deg,#101f2a,#07111c);clip-path:polygon(0 50%,20% 25%,42% 58%,64% 35%,82% 58%,100% 30%,100% 100%,0 100%)}.tree{position:absolute;bottom:31%;font-size:clamp(40px,8vw,90px);opacity:.55;filter:brightness(.5);transform-origin:bottom}.tree.left{left:2%;transform:scaleX(-1)}.tree.right{right:2%}
+/* river: moving glints */
+.river{position:absolute;bottom:0;left:0;width:100%;height:38%;overflow:hidden;background:linear-gradient(180deg,#173450 0%,#102c45 20%,#081c30 64%,#041321 100%);border-top:1px solid #a6c8e133}.river:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 9px,#b9d8ec0b 10px 11px);animation:ripples 8s linear infinite}.moon-path{position:absolute;top:0;right:14%;width:17%;height:100%;background:linear-gradient(180deg,#ffedbd45,#ffe7a81d 35%,transparent 100%);filter:blur(9px);transform:skewX(-8deg);animation:pathShimmer 4s ease-in-out infinite alternate}.glints{position:absolute;top:4%;right:12%;width:20%;height:90%;background:repeating-linear-gradient(180deg,transparent 0 12px,#ffe9ba20 13px 15px,transparent 16px 25px);filter:blur(2px);animation:glint 3.4s ease-in-out infinite alternate}@keyframes ripples{to{background-position:0 55px}}@keyframes pathShimmer{to{opacity:.35;transform:skewX(7deg) scaleX(.7)}}@keyframes glint{to{opacity:.25;transform:translateX(8px)}}
+/* light floating lanterns */
+.lanterns{position:absolute;inset:0;pointer-events:none}.sky-lantern{position:absolute;bottom:36%;left:var(--left);width:32px;height:42px;opacity:.9;animation:rise var(--dur) linear forwards;filter:drop-shadow(0 0 14px #ffc96788)}.sky-lantern:before{content:'';position:absolute;inset:4px 4px 9px;background:linear-gradient(90deg,#b9622b,#f3bd62 48%,#c66c32);clip-path:polygon(22% 0,78% 0,100% 25%,85% 85%,50% 100%,15% 85%,0 25%);border:1px solid #ffdfa4}.sky-lantern:after{content:'';position:absolute;left:12px;bottom:2px;width:8px;height:10px;background:radial-gradient(ellipse,#fff4a7,#ff8a30 65%,transparent);border-radius:50%;box-shadow:0 0 14px #ffad4d}@keyframes rise{0%{transform:translate(0,0) scale(.65);opacity:0}12%{opacity:1}100%{transform:translate(var(--drift),-115vh) scale(.8);opacity:0}}
+/* foreground and centerpiece */
+.header{position:absolute;top:5.5%;left:0;right:0;text-align:center;padding:0 18px;z-index:3}.overline{font-size:clamp(10px,1.6vw,13px);letter-spacing:.28em;color:#f4d6a6;opacity:.92}.header h1{font-weight:300;letter-spacing:.04em;margin:12px 0 8px;font-size:clamp(26px,5.2vw,54px);text-shadow:0 5px 28px #030914}.header p{margin:0;color:#d5e2f1;font-size:clamp(12px,2vw,16px);font-weight:300}.heartline{margin:13px auto 0;width:110px;height:1px;background:linear-gradient(90deg,transparent,#f4d5a6,transparent);position:relative}.heartline:after{content:'♡';position:absolute;top:-12px;left:50%;transform:translateX(-50%);color:#f6d9a8;font-size:18px}
+.krathong{position:absolute;bottom:calc(23% + var(--offset,0px));left:var(--x,50%);width:clamp(145px,22vw,218px);height:147px;transform:translateX(-50%);z-index:6;filter:drop-shadow(0 12px 12px #02091388);animation:bob 3.5s ease-in-out infinite;transition:left 1.2s ease}.krathong.pairB{--offset:7px;transform:translateX(-50%) scale(.85);z-index:5}.krathong.launching{animation:journey 9s cubic-bezier(.25,.7,.2,1) forwards}.krathong svg{width:100%;height:100%;overflow:visible}@keyframes bob{50%{translate:0 -6px;rotate:1deg}}@keyframes journey{0%{translate:0 0;scale:1;rotate:0;opacity:1}22%{translate:var(--travel-short,10vw) -18px;scale:.9;rotate:3deg;opacity:1}62%{translate:var(--travel-mid,28vw) -48px;scale:.58;rotate:8deg;opacity:.9}100%{translate:var(--travel,40vw) -78px;scale:.28;rotate:13deg;opacity:0}}
+/* paper love notes */
+.note{position:absolute;z-index:8;left:var(--left);bottom:27%;width:min(260px,68vw);padding:15px 17px 17px;background:linear-gradient(135deg,#fff9e9 0%,#f7e6c9 55%,#ecd2a9 100%);color:#735035;border:1px solid #d9b783;box-shadow:0 12px 32px #0004, inset 0 0 0 3px #fff8e8;transform:rotate(var(--rot)) scale(.72);opacity:0;text-align:center;line-height:1.7;font-size:clamp(12px,2vw,14px);animation:paperFloat 7.8s cubic-bezier(.18,.8,.25,1) forwards;animation-delay:var(--delay,0ms)}.note:before{content:'♡';display:block;color:#bb817d;font-size:20px;margin-bottom:3px}.note:after{content:'';position:absolute;inset:6px;border:1px solid #d8bd96;pointer-events:none}@keyframes paperFloat{0%{opacity:0;translate:0 24px;scale:.72}7%{opacity:1;translate:0 -5px;scale:1.06}13%{translate:0 0;scale:1}72%{opacity:1}100%{opacity:0;translate:var(--drift) -58vh;rotate:calc(var(--rot) + 8deg);scale:.88}}
+/* UI */
+.bottom{position:absolute;z-index:20;bottom:max(18px,env(safe-area-inset-bottom));left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 12px}.actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}.btn{padding:11px 17px;border-radius:999px;border:1px solid #f3d6a56e;color:#f8f2e8;background:#0b2038c9;backdrop-filter:blur(12px);box-shadow:0 5px 18px #02091455;transition:transform .2s,background .2s,border .2s;font-size:clamp(12px,1.8vw,14px)}.btn:hover{transform:translateY(-3px);background:#193956;border-color:#f6d8a6}.btn.main{background:linear-gradient(135deg,#f6d89f,#d6a76a);color:#4b301a;border-color:#ffedc8;font-weight:500}.btn.couple{background:linear-gradient(135deg,#e9a9bf,#c884a0);color:#502b3b;border-color:#ffd8e6;font-weight:500}.tinyhint{font-size:11px;color:#d3dfed;text-shadow:0 2px 8px #000;opacity:.8;text-align:center}.topbuttons{position:absolute;top:15px;left:15px;right:15px;display:flex;justify-content:space-between;z-index:20}.iconbtn{border:1px solid #ffffff30;background:#071a30a8;color:#f6e7cc;backdrop-filter:blur(8px);border-radius:24px;padding:8px 12px;font-size:12px}.toast{position:absolute;top:30%;left:50%;transform:translate(-50%,-10px);z-index:30;opacity:0;pointer-events:none;padding:11px 18px;background:#0b2039e8;border:1px solid #f1d3a677;border-radius:24px;color:#f9e7c6;text-align:center;white-space:normal;width:max-content;max-width:85%;transition:.35s}.toast.show{opacity:1;transform:translate(-50%,0)}
+/* edit panel */
+.modal{position:absolute;inset:0;z-index:40;background:#020813b9;backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.panel{width:min(440px,100%);background:linear-gradient(145deg,#162d48,#0b1b2f);border:1px solid #f2d6a655;border-radius:22px;padding:22px;box-shadow:0 25px 70px #0008}.panel h2{font-weight:300;margin:0 0 16px;color:#f5d9a9}.field{display:flex;flex-direction:column;gap:6px;margin:11px 0}.field label{font-size:12px;color:#d5c5a8}.field input,.field textarea{width:100%;border:1px solid #ffffff30;border-radius:12px;background:#07182a;color:#fff;padding:10px 12px;font:inherit;outline:none}.field textarea{min-height:88px;resize:vertical}.panelactions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.footerhint{position:absolute;bottom:18%;left:0;right:0;text-align:center;color:#e7d7ba88;font-size:10px;letter-spacing:.15em;pointer-events:none}
+@media(max-width:600px){.header{top:7%}.moon{right:9%;top:13%;width:72px}.header h1{margin:9px 0 5px}.header p{max-width:310px;margin:auto}.river{height:40%}.horizon{bottom:37%;height:20%}.krathong{bottom:calc(27% + var(--offset,0px));width:140px;height:100px}.bottom{bottom:max(13px,env(safe-area-inset-bottom))}.actions{gap:7px;max-width:390px}.btn{padding:10px 13px}.footerhint{bottom:22%}.note{bottom:34%}.pairB{bottom:calc(25% + var(--offset,0px))}}
+@media(max-height:590px){.header{top:3%}.header h1{font-size:clamp(22px,4vw,35px);margin:4px}.header p{font-size:12px}.heartline{margin-top:8px}.krathong{bottom:20%;height:95px}.bottom{bottom:8px}.footerhint{bottom:16%}.note{bottom:22%}}
+
+/* elegant fireworks in the distant sky */
+#fireworks{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.95}
+.header,.moon,.cloud,.shooting-star{z-index:2}.topbuttons,.bottom{z-index:20}
+.krathong{filter:drop-shadow(0 10px 15px #02091399) drop-shadow(0 0 12px #ffd88a35)}
+</style></head>
+<body><main class="scene" id="scene">
+<canvas id="fireworks" aria-hidden="true"></canvas><div class="skyglow"></div><div class="moon"></div><div id="starfield"></div><div class="shooting-star"></div><div class="cloud"></div><div class="cloud c2"></div>
+<div class="horizon"><div class="mountain"></div><div class="mountain right"></div></div><div class="tree left">♣</div><div class="tree right">♣</div><div class="shore"></div>
+<div class="river"><div class="moon-path"></div><div class="glints"></div></div><div class="lanterns" id="lanterns"></div>
+<header class="header"><div class="overline">A NIGHT TO REMEMBER · LOY KRATHONG</div><h1 id="headline">คืนนี้…เราลอยไปด้วยกัน</h1><p id="subline">ฝากคำอธิษฐานไว้กับแสงเทียน แล้วให้สายน้ำพาไป</p><div class="heartline"></div></header>
+<!-- hand-drawn vector krathong: banana-leaf bowl, folded petals, flowers, candle -->
+<div class="krathong" id="raft1" style="--x:43%"><svg viewBox="0 0 260 175" role="img" aria-label="กระทงดอกบัวสีชมพูพาสเทลประดับกลีบบัว ใบตอง ดอกไม้ ไข่มุกและเทียน" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="leaf1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5ed9b"/><stop offset=".48" stop-color="#75a95d"/><stop offset="1" stop-color="#286044"/></linearGradient>
+ <linearGradient id="gold1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0b5"/><stop offset=".42" stop-color="#e8b95e"/><stop offset="1" stop-color="#a96a32"/></linearGradient>
+ <linearGradient id="pink1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff5f2"/><stop offset=".48" stop-color="#ffc4d8"/><stop offset="1" stop-color="#dc789f"/></linearGradient>
+ <linearGradient id="rose1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe6ef"/><stop offset="1" stop-color="#ef9fbd"/></linearGradient>
+ <radialGradient id="glow1"><stop stop-color="#fffbd4" stop-opacity=".9"/><stop offset=".35" stop-color="#ffc85c" stop-opacity=".45"/><stop offset="1" stop-color="#ffb84a" stop-opacity="0"/></radialGradient>
+ <filter id="soft1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<!-- soft candle glow and shadow -->
+<ellipse cx="130" cy="151" rx="102" ry="13" fill="#020914" opacity=".34"/>
+<ellipse cx="130" cy="77" rx="43" ry="52" fill="url(#glow1)" filter="url(#soft1)"/>
+<!-- broad folded banana leaves around the cup -->
+<g stroke="#d8eca0" stroke-width="1.4" stroke-linejoin="round">
+ <path d="M42 119 Q9 81 31 55 Q60 65 65 119Z" fill="url(#leaf1)"/><path d="M61 126 Q28 66 58 39 Q86 58 83 127Z" fill="url(#leaf1)"/>
+ <path d="M83 132 Q57 57 91 29 Q116 54 108 133Z" fill="url(#leaf1)"/><path d="M108 134 Q91 45 130 19 Q158 52 151 135Z" fill="url(#leaf1)"/>
+ <path d="M151 133 Q148 55 177 31 Q205 58 178 130Z" fill="url(#leaf1)"/><path d="M177 126 Q190 66 218 53 Q238 83 198 121Z" fill="url(#leaf1)"/>
+ <path d="M198 119 Q221 83 235 91 Q235 115 214 128Z" fill="url(#leaf1)"/>
+</g>
+<g fill="none" stroke="#e7f5b8" stroke-width="1.5" opacity=".85"><path d="M34 60Q48 91 58 116 M61 44Q72 86 77 123 M93 34Q103 83 104 130 M130 24Q132 79 130 132 M176 36Q166 82 163 128 M216 58Q198 89 190 120"/></g>
+<!-- layered lotus-shaped banana-leaf bowl -->
+<path d="M27 111 Q130 145 233 111 Q215 151 130 157 Q45 151 27 111Z" fill="#285b43" stroke="#d7e99a" stroke-width="2"/>
+<path d="M31 109 Q130 137 229 109 Q211 137 130 144 Q49 137 31 109Z" fill="url(#gold1)" stroke="#fff0b7" stroke-width="2"/>
+<path d="M39 112 Q130 137 221 112 Q204 130 130 135 Q56 130 39 112Z" fill="#9c6333" opacity=".55"/>
+<!-- scalloped golden rim -->
+<path d="M27 110 Q43 101 58 110 Q73 119 88 112 Q103 105 118 113 Q130 120 143 113 Q158 105 173 112 Q188 119 203 110 Q218 102 233 110" fill="none" stroke="#ffe8a4" stroke-width="4" stroke-linecap="round"/>
+<path d="M39 120 Q130 148 221 120" fill="none" stroke="#f9d98d" stroke-width="1.5" stroke-dasharray="2 5"/>
+<!-- little pearl beads -->
+<g fill="#fff4dd" stroke="#d7ad69" stroke-width=".8"><circle cx="49" cy="116" r="3"/><circle cx="70" cy="124" r="3"/><circle cx="93" cy="130" r="3"/><circle cx="115" cy="134" r="3"/><circle cx="145" cy="134" r="3"/><circle cx="167" cy="130" r="3"/><circle cx="190" cy="124" r="3"/><circle cx="211" cy="116" r="3"/></g>
+<!-- full, layered pink lotus bloom -->
+<g transform="translate(130 91)">
+ <g fill="#c96891" opacity=".9"><ellipse cy="-13" rx="13" ry="34" transform="rotate(-72)"/><ellipse cy="-13" rx="13" ry="34" transform="rotate(-36)"/><ellipse cy="-13" rx="13" ry="34"/><ellipse cy="-13" rx="13" ry="34" transform="rotate(36)"/><ellipse cy="-13" rx="13" ry="34" transform="rotate(72)"/></g>
+ <g fill="url(#pink1)" stroke="#fff0f3" stroke-width="1.2"><ellipse cy="-13" rx="11" ry="31" transform="rotate(-54)"/><ellipse cy="-13" rx="11" ry="31" transform="rotate(-27)"/><ellipse cy="-13" rx="11" ry="31"/><ellipse cy="-13" rx="11" ry="31" transform="rotate(27)"/><ellipse cy="-13" rx="11" ry="31" transform="rotate(54)"/></g>
+ <g fill="url(#rose1)" stroke="#fff8f2" stroke-width="1"><ellipse cy="-11" rx="8" ry="23" transform="rotate(-40)"/><ellipse cy="-11" rx="8" ry="23"/><ellipse cy="-11" rx="8" ry="23" transform="rotate(40)"/></g>
+ <circle cy="-2" r="9" fill="#f5c65e" stroke="#fff0b4" stroke-width="1.5"/><g fill="#fff4c5"><circle cx="-3" cy="-4" r="1.5"/><circle cx="3" cy="-4" r="1.5"/><circle cy="1" r="1.5"/></g>
+</g>
+<!-- two tiny white jasmine blossoms -->
+<g fill="#fffaf0" stroke="#e7d6bb" stroke-width=".8">
+ <g transform="translate(76 105)"><ellipse cy="-7" rx="4" ry="9"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(60)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(120)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(180)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(240)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(300)"/><circle r="3" fill="#f4c65d"/></g>
+ <g transform="translate(184 105) scale(.92)"><ellipse cy="-7" rx="4" ry="9"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(60)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(120)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(180)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(240)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(300)"/><circle r="3" fill="#f4c65d"/></g>
+</g>
+<!-- candle with cute heart-shaped wax detail -->
+<rect x="124" y="75" width="12" height="35" rx="3" fill="#fff2d5" stroke="#d8b978" stroke-width="1.2"/><path d="M130 47 C147 66 138 77 130 79 C120 74 116 62 130 47Z" fill="#ff9c3e"/><path d="M130 53 C138 65 133 73 130 74 C124 69 124 60 130 53Z" fill="#fff9d7"/><path d="M126 91 Q130 87 134 91 Q130 98 126 91Z" fill="#ed9ab2"/>
+<!-- mini pink bow at the front -->
+<g transform="translate(130 128)" stroke="#fff0d7" stroke-width="1"><path d="M0 0 C-16 -13 -24 -5 -17 4 Q-8 9 0 0Z" fill="#f3a7c0"/><path d="M0 0 C16 -13 24 -5 17 4 Q8 9 0 0Z" fill="#f3a7c0"/><circle r="4" fill="#ffe6a4"/></g>
+<!-- tiny heart sparkles -->
+<g fill="#ffe9bd"><path d="M53 82 C45 73 34 81 53 95 C72 81 61 73 53 82Z" opacity=".9"/><path d="M207 83 C199 74 188 82 207 96 C226 82 215 74 207 83Z" opacity=".9"/></g>
+</svg></div>
+<div class="krathong pairB" id="raft2" style="--x:57%;display:none"><svg viewBox="0 0 260 175" role="img" aria-label="กระทงดอกบัวสีชมพูพาสเทลประดับกลีบบัว ใบตอง ดอกไม้ ไข่มุกและเทียน" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="leaf2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d5ed9b"/><stop offset=".48" stop-color="#75a95d"/><stop offset="1" stop-color="#286044"/></linearGradient>
+ <linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0b5"/><stop offset=".42" stop-color="#e8b95e"/><stop offset="1" stop-color="#a96a32"/></linearGradient>
+ <linearGradient id="pink2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff5f2"/><stop offset=".48" stop-color="#ffc4d8"/><stop offset="1" stop-color="#dc789f"/></linearGradient>
+ <linearGradient id="rose2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe6ef"/><stop offset="1" stop-color="#ef9fbd"/></linearGradient>
+ <radialGradient id="glow2"><stop stop-color="#fffbd4" stop-opacity=".9"/><stop offset=".35" stop-color="#ffc85c" stop-opacity=".45"/><stop offset="1" stop-color="#ffb84a" stop-opacity="0"/></radialGradient>
+ <filter id="soft2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<!-- soft candle glow and shadow -->
+<ellipse cx="130" cy="151" rx="102" ry="13" fill="#020914" opacity=".34"/>
+<ellipse cx="130" cy="77" rx="43" ry="52" fill="url(#glow2)" filter="url(#soft2)"/>
+<!-- broad folded banana leaves around the cup -->
+<g stroke="#d8eca0" stroke-width="1.4" stroke-linejoin="round">
+ <path d="M42 119 Q9 81 31 55 Q60 65 65 119Z" fill="url(#leaf2)"/><path d="M61 126 Q28 66 58 39 Q86 58 83 127Z" fill="url(#leaf2)"/>
+ <path d="M83 132 Q57 57 91 29 Q116 54 108 133Z" fill="url(#leaf2)"/><path d="M108 134 Q91 45 130 19 Q158 52 151 135Z" fill="url(#leaf2)"/>
+ <path d="M151 133 Q148 55 177 31 Q205 58 178 130Z" fill="url(#leaf2)"/><path d="M177 126 Q190 66 218 53 Q238 83 198 121Z" fill="url(#leaf2)"/>
+ <path d="M198 119 Q221 83 235 91 Q235 115 214 128Z" fill="url(#leaf2)"/>
+</g>
+<g fill="none" stroke="#e7f5b8" stroke-width="1.5" opacity=".85"><path d="M34 60Q48 91 58 116 M61 44Q72 86 77 123 M93 34Q103 83 104 130 M130 24Q132 79 130 132 M176 36Q166 82 163 128 M216 58Q198 89 190 120"/></g>
+<!-- layered lotus-shaped banana-leaf bowl -->
+<path d="M27 111 Q130 145 233 111 Q215 151 130 157 Q45 151 27 111Z" fill="#285b43" stroke="#d7e99a" stroke-width="2"/>
+<path d="M31 109 Q130 137 229 109 Q211 137 130 144 Q49 137 31 109Z" fill="url(#gold2)" stroke="#fff0b7" stroke-width="2"/>
+<path d="M39 112 Q130 137 221 112 Q204 130 130 135 Q56 130 39 112Z" fill="#9c6333" opacity=".55"/>
+<!-- scalloped golden rim -->
+<path d="M27 110 Q43 101 58 110 Q73 119 88 112 Q103 105 118 113 Q130 120 143 113 Q158 105 173 112 Q188 119 203 110 Q218 102 233 110" fill="none" stroke="#ffe8a4" stroke-width="4" stroke-linecap="round"/>
+<path d="M39 120 Q130 148 221 120" fill="none" stroke="#f9d98d" stroke-width="1.5" stroke-dasharray="2 5"/>
+<!-- little pearl beads -->
+<g fill="#fff4dd" stroke="#d7ad69" stroke-width=".8"><circle cx="49" cy="116" r="3"/><circle cx="70" cy="124" r="3"/><circle cx="93" cy="130" r="3"/><circle cx="115" cy="134" r="3"/><circle cx="145" cy="134" r="3"/><circle cx="167" cy="130" r="3"/><circle cx="190" cy="124" r="3"/><circle cx="211" cy="116" r="3"/></g>
+<!-- full, layered pink lotus bloom -->
+<g transform="translate(130 91)">
+ <g fill="#c96891" opacity=".9"><ellipse cy="-13" rx="13" ry="34" transform="rotate(-72)"/><ellipse cy="-13" rx="13" ry="34" transform="rotate(-36)"/><ellipse cy="-13" rx="13" ry="34"/><ellipse cy="-13" rx="13" ry="34" transform="rotate(36)"/><ellipse cy="-13" rx="13" ry="34" transform="rotate(72)"/></g>
+ <g fill="url(#pink2)" stroke="#fff0f3" stroke-width="1.2"><ellipse cy="-13" rx="11" ry="31" transform="rotate(-54)"/><ellipse cy="-13" rx="11" ry="31" transform="rotate(-27)"/><ellipse cy="-13" rx="11" ry="31"/><ellipse cy="-13" rx="11" ry="31" transform="rotate(27)"/><ellipse cy="-13" rx="11" ry="31" transform="rotate(54)"/></g>
+ <g fill="url(#rose2)" stroke="#fff8f2" stroke-width="1"><ellipse cy="-11" rx="8" ry="23" transform="rotate(-40)"/><ellipse cy="-11" rx="8" ry="23"/><ellipse cy="-11" rx="8" ry="23" transform="rotate(40)"/></g>
+ <circle cy="-2" r="9" fill="#f5c65e" stroke="#fff0b4" stroke-width="1.5"/><g fill="#fff4c5"><circle cx="-3" cy="-4" r="1.5"/><circle cx="3" cy="-4" r="1.5"/><circle cy="1" r="1.5"/></g>
+</g>
+<!-- two tiny white jasmine blossoms -->
+<g fill="#fffaf0" stroke="#e7d6bb" stroke-width=".8">
+ <g transform="translate(76 105)"><ellipse cy="-7" rx="4" ry="9"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(60)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(120)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(180)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(240)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(300)"/><circle r="3" fill="#f4c65d"/></g>
+ <g transform="translate(184 105) scale(.92)"><ellipse cy="-7" rx="4" ry="9"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(60)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(120)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(180)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(240)"/><ellipse cy="-7" rx="4" ry="9" transform="rotate(300)"/><circle r="3" fill="#f4c65d"/></g>
+</g>
+<!-- candle with cute heart-shaped wax detail -->
+<rect x="124" y="75" width="12" height="35" rx="3" fill="#fff2d5" stroke="#d8b978" stroke-width="1.2"/><path d="M130 47 C147 66 138 77 130 79 C120 74 116 62 130 47Z" fill="#ff9c3e"/><path d="M130 53 C138 65 133 73 130 74 C124 69 124 60 130 53Z" fill="#fff9d7"/><path d="M126 91 Q130 87 134 91 Q130 98 126 91Z" fill="#ed9ab2"/>
+<!-- mini pink bow at the front -->
+<g transform="translate(130 128)" stroke="#fff0d7" stroke-width="1"><path d="M0 0 C-16 -13 -24 -5 -17 4 Q-8 9 0 0Z" fill="#f3a7c0"/><path d="M0 0 C16 -13 24 -5 17 4 Q8 9 0 0Z" fill="#f3a7c0"/><circle r="4" fill="#ffe6a4"/></g>
+<!-- tiny heart sparkles -->
+<g fill="#ffe9bd"><path d="M53 82 C45 73 34 81 53 95 C72 81 61 73 53 82Z" opacity=".9"/><path d="M207 83 C199 74 188 82 207 96 C226 82 215 74 207 83Z" opacity=".9"/></g>
+</svg></div>
+<div class="footerhint">MAKE A WISH · LET IT FLOAT WITH THE RIVER</div>
+<div class="topbuttons"><button class="iconbtn" id="musicButton" onclick="toggleMusic()">♫ เปิดเพลง</button><button class="iconbtn" onclick="openEdit()">✎ เขียนข้อความของเรา</button></div>
+<div class="bottom"><div class="actions"><button class="btn main" onclick="releaseOne()">🪷 ลอยกระทงของฉัน</button><button class="btn couple" onclick="releasePair()">♡ ลอยกระทงคู่กัน</button><button class="btn" onclick="sendLanterns()">🏮 ปล่อยโคมลอย</button></div><div class="tinyhint">กดปล่อยกระทง แล้วคำอธิษฐานจะลอยตามไปบนสายน้ำ ✨</div></div>
+<div class="toast" id="toast"></div><div class="modal" id="editModal"><section class="panel"><h2>เขียนเรื่องราวของเรา ♡</h2><div class="field"><label>ชื่อ / คำเรียกแฟน</label><input id="nameInput" placeholder="เช่น ถึงเจ้าตัวเล็กของฉัน"></div><div class="field"><label>หัวข้อบนหน้าเว็บ</label><input id="titleInput" placeholder="คืนนี้…เราลอยไปด้วยกัน"></div><div class="field"><label>ข้อความรัก / ความทรงจำ</label><textarea id="loveInput" placeholder="เขียนความทรงจำหรือข้อความที่อยากบอก..."></textarea></div><div class="panelactions"><button class="btn" onclick="closeEdit()">ยกเลิก</button><button class="btn main" onclick="saveEdit()">บันทึกความทรงจำ</button></div></section></div>
+</main>
+<script>
+// Starfield, including a handful of brighter stars
+const starfield=document.querySelector('#starfield');for(let i=0;i<145;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*65+'%';const size=Math.random()*2.2+.6;s.style.width=size+'px';s.style.height=size+'px';s.style.setProperty('--tw',2+Math.random()*4+'s');s.style.setProperty('--op',.2+Math.random()*.75);starfield.appendChild(s)}
+
+// Fireworks: soft, colorful bursts high above the river
+(()=>{const canvas=document.getElementById('fireworks'),c=canvas.getContext('2d');let w=0,h=0,particles=[];const colors=['#ffd98a','#ffb5ca','#b9dcff','#fff1c7','#d9b7ff'];
+function size(){const d=Math.min(devicePixelRatio||1,2);w=canvas.clientWidth;h=canvas.clientHeight;canvas.width=w*d;canvas.height=h*d;c.setTransform(d,0,0,d,0,0)}
+window.addEventListener('resize',size);size();
+function burst(){const x=w*(.12+Math.random()*.76),y=h*(.10+Math.random()*.36),color=colors[Math.floor(Math.random()*colors.length)],count=42+Math.floor(Math.random()*25);for(let i=0;i<count;i++){const a=Math.PI*2*i/count+Math.random()*.08,s=1.1+Math.random()*2.6;particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:55+Math.random()*30,max:85,r:1+Math.random()*1.5,color})}}
+function frame(){c.clearRect(0,0,w,h);for(let i=particles.length-1;i>=0;i--){const p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vx*=.986;p.vy=p.vy*.986+.018;p.life--;c.globalAlpha=Math.max(0,p.life/ p.max);c.fillStyle=p.color;c.shadowBlur=9;c.shadowColor=p.color;c.beginPath();c.arc(p.x,p.y,p.r,0,Math.PI*2);c.fill();if(p.life<=0)particles.splice(i,1)}c.globalAlpha=1;c.shadowBlur=0;requestAnimationFrame(frame)}
+setTimeout(burst,900);setTimeout(burst,2100);setInterval(()=>{burst();if(Math.random()>.55)setTimeout(burst,450+Math.random()*500)},3000);frame();})();
+
+let loveName='คนที่ฉันรัก ♡',loveTitle='คืนนี้…เราลอยไปด้วยกัน',loveText='ขอบคุณที่เข้ามาเป็นความสุขในชีวิต\nอยากเก็บทุกคืนที่มีเธอไว้เป็นความทรงจำ\nขอให้เราได้จับมือกันแบบนี้ไปนาน ๆ';
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(el.timer);el.timer=setTimeout(()=>el.classList.remove('show'),3000)}
+function makeNote(text,x,delay=0){const n=document.createElement('div');n.className='note';n.style.setProperty('--left',Math.max(4,Math.min(72,x))+'%');n.style.setProperty('--rot',(Math.random()*8-4)+'deg');n.style.setProperty('--drift',(Math.random()*110-55)+'px');n.style.setProperty('--delay',delay+'ms');n.textContent=text;document.querySelector('.scene').appendChild(n);setTimeout(()=>n.remove(),delay+8200)}
+function resetRaft(el,x){el.classList.remove('launching');el.style.display='block';el.style.left=x+'%';el.style.setProperty('--travel',(x>50?-55:55)+'vw');el.style.setProperty('--travel-short',(x>50?-12:12)+'vw');el.style.setProperty('--travel-mid',(x>50?-34:34)+'vw');void el.offsetWidth;el.classList.add('launching');setTimeout(()=>{el.classList.remove('launching');el.style.display='none'},9100)}
+function releaseOne(){const x=34+Math.random()*28;resetRaft(document.getElementById('raft1'),x);makeNote('คืนนี้ขอฝากคำอธิษฐาน…ให้เราได้รักและดูแลกันแบบนี้ไปทุกปี ♡',x-12,1750);makeNote('เธอคือความทรงจำที่ฉันอยากสร้างเพิ่มขึ้นในทุกวัน 💌',x+9,2550);toast('กระทงกำลังลอยออกไป…อีกสักครู่คำอธิษฐานจะตามไปนะ ♡')}
+function releasePair(){const a=document.getElementById('raft1'),b=document.getElementById('raft2');const x=39;resetRaft(a,x);resetRaft(b,58);makeNote('กระทงสองใบ ลอยเคียงกัน…เหมือนเราที่อยากเดินไปด้วยกัน 💗',34,1750);makeNote('ขอให้ความรักของเราอบอุ่นเหมือนแสงเทียน และมั่นคงเหมือนพระจันทร์คืนนี้ 🌙',50,2650);toast('กระทงคู่กำลังลอยเคียงกัน…คำอธิษฐานจะตามไปในอีกสักครู่ ♡')}
+function sendLanterns(){for(let i=0;i<12;i++){setTimeout(()=>{const l=document.createElement('div');l.className='sky-lantern';l.style.setProperty('--left',Math.random()*95+'%');l.style.setProperty('--dur',9+Math.random()*7+'s');l.style.setProperty('--drift',(Math.random()*160-80)+'px');document.getElementById('lanterns').appendChild(l);setTimeout(()=>l.remove(),16000)},i*240)}makeNote('ขอให้ทุกความฝันของเรา ค่อย ๆ ส่องสว่างและเป็นจริง ✨',40);toast('โคมลอยนำความฝันของเราขึ้นสู่ฟ้า 🏮')}
+function openEdit(){document.getElementById('nameInput').value=loveName;document.getElementById('titleInput').value=loveTitle;document.getElementById('loveInput').value=loveText;document.getElementById('editModal').classList.add('open')}
+function closeEdit(){document.getElementById('editModal').classList.remove('open')}
+function saveEdit(){loveName=document.getElementById('nameInput').value||loveName;loveTitle=document.getElementById('titleInput').value||loveTitle;loveText=document.getElementById('loveInput').value||loveText;document.getElementById('headline').textContent=loveTitle;closeEdit();toast('เก็บข้อความของเราลงในฉากแล้ว ♡')}
+// Soft original ambient tune synthesized after user interaction. Gentle plucked tones + warm pad.
+let ctx=null,music=false,master=null,loop=null;function tone(freq,start,dur,vol,type='sine'){const osc=ctx.createOscillator(),g=ctx.createGain();osc.type=type;osc.frequency.setValueAtTime(freq,start);g.gain.setValueAtTime(.0001,start);g.gain.exponentialRampToValueAtTime(vol,start+.06);g.gain.exponentialRampToValueAtTime(.0001,start+dur);osc.connect(g);g.connect(master);osc.start(start);osc.stop(start+dur+.03)}
+function phrase(){if(!music||!ctx)return;const t=ctx.currentTime;const melody=[659.25,783.99,880,783.99,698.46,587.33,523.25,587.33,659.25,523.25];melody.forEach((f,i)=>tone(f,t+i*.48,.62,.08));[261.63,329.63,392,349.23].forEach((f,i)=>tone(f,t+i*1.2,2.2,.025,'triangle'));}
+function toggleMusic(){if(music){music=false;if(master)master.gain.setTargetAtTime(.0001,ctx.currentTime,.35);clearInterval(loop);document.getElementById('musicButton').textContent='♫ เปิดเพลง';return}try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();master=ctx.createGain();master.gain.value=.6;master.connect(ctx.destination);music=true;document.getElementById('musicButton').textContent='♫ ปิดเพลง';phrase();loop=setInterval(phrase,5200)}catch(e){toast('อุปกรณ์ไม่รองรับเสียงเพลงที่สร้างในเว็บ')}}
+// Close edit overlay if tap backdrop
+const modal=document.getElementById('editModal');modal.addEventListener('click',e=>{if(e.target===modal)closeEdit()});
+</script></body></html>
